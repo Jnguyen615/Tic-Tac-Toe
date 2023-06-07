@@ -1,1 +1,81 @@
 
+body {
+  background-image: url(assets/Forest-transparent.jpeg);
+  background-repeat: no-repeat; 
+  font-family: 'Rubik Marker Hatch', sans-serif ;
+  height: 100vh;
+  width: 100vw;
+}
+
+.player1 { 
+  background-color: #63b568;
+  content: url(assets/mushroom.jpeg);
+  opacity: .4;
+  margin-left: -8em;
+  height: 36em;
+  width: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player2 {
+  background-color:#63b568;
+  opacity: .4;
+  height: 36em;
+  width: 10em;
+  margin-right: -2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 33%
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  height: 36.5em;
+   width: 56em
+}
+ body {
+  height: 100%;
+} 
+
+h1 {
+  text-align: center;
+  font-size: 29px 
+}
+
+h2 {
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(75px, 7px);
+  justify-items: center;
+  margin-top: 12%;
+  border: 1px solid black;
+  gap: 15px;
+}
+
+.boxes {
+  border: 2px solid green; 
+  width: 75px;
+  height: 75px;
+  border-radius: 10%;
+  box-shadow: 5px 5px;
+
+}
+/* .grid-container > div {
+  background-color: #d6f8d8;
+  border: 1px solid black;
+} */
+
