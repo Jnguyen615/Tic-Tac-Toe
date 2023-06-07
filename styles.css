@@ -1,32 +1,26 @@
 
 body {
   background-image: url(assets/Forest-transparent.jpeg);
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  background-size: cover; 
   font-family: 'Rubik Marker Hatch', sans-serif ;
-  height: 100vh;
-  width: 100vw;
 }
 
 .player1 { 
   background-color: #63b568;
-  content: url(assets/mushroom.jpeg);
   opacity: .4;
-  margin-left: -8em;
-  height: 36em;
-  width: 10em;
-  display: flex;
-  flex-direction: column;
+  margin-left: -10em;
+  height: 47em;
+  width: 15em;
   align-items: center;
 }
 
 .player2 {
   background-color:#63b568;
   opacity: .4;
-  height: 36em;
-  width: 10em;
-  margin-right: -2em;
-  display: flex;
-  flex-direction: column;
+  height:47em;
+  width: 15em;
+  margin-right: 21em;
   align-items: center;
 }
 
@@ -34,28 +28,49 @@ article {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  width: 33%
+  width: 20%
 }
 
 main {
   display: flex;
   justify-content: space-evenly;
   border: 1px solid black;
-  height: 36.5em;
-   width: 56em
+  flex-direction: row;
+  height: 57em;
+  width: 104em;
 }
  body {
   height: 100%;
 } 
 
-h1 {
-  text-align: center;
-  font-size: 29px 
+h1, h4{
+  font-size: 25px;
+
 }
 
 h2 {
   text-align: center;
+  font-size: 35px;
 }
+
+h3 {
+  text-align: center;
+  font-size: x-large;
+}
+
+p {
+  margin-top: 20%
+}
+
+span {
+  font-size: 5%
+}
+
+.hibiscus, .mushroom {
+  height: 20px;
+  text-size: 20px
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
