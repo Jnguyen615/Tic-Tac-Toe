@@ -1,8 +1,10 @@
 
 body {
-  background-image: url(assets/Forest-transparent.jpeg);
+  background-image: url(assets/jungle-forest.avif);
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: 'Rubik Marker Hatch', sans-serif ;
 }
 
@@ -20,21 +22,21 @@ body {
   opacity: .4;
   height:47em;
   width: 15em;
-  margin-right: 21em;
+  margin-right: 5em;
   align-items: center;
 }
 
 article {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 20%
 }
 
 main {
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   flex-direction: row;
   height: 57em;
   width: 104em;
@@ -45,6 +47,7 @@ main {
 
 h1, h4{
   font-size: 25px;
+  
 
 }
 
@@ -63,12 +66,23 @@ p {
 }
 
 span {
-  font-size: 5%
+  font-size: 55px
 }
 
-.hibiscus, .mushroom {
-  height: 20px;
-  text-size: 20px
+.hibiscus-1, .mushroom-1 {
+    display: flex;
+    justify-content: center;
+    margin-top: -15%;
+    margin-left: 26%;
+    position: absolute;
+    font-size: 150%;
+}
+
+.hibiscus-2, .mushroom-2 {
+  font-size: 150%;
+  margin-top: -1%;
+  margin-left: 2%;
+  position: absolute;
 }
 
 .grid-container {
@@ -76,21 +90,23 @@ span {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(75px, 7px);
   justify-items: center;
-  margin-top: 12%;
-  border: 1px solid black;
-  gap: 15px;
+  margin-top: 40%;
+  margin-left: -5%;
+  gap: 50px;
 }
 
 .boxes {
   border: 2px solid green; 
-  width: 75px;
-  height: 75px;
+  width: 114px;
+  height: 104px;
   border-radius: 10%;
   box-shadow: 5px 5px;
-
+  font-size: 32px
 }
-/* .grid-container > div {
-  background-color: #d6f8d8;
-  border: 1px solid black;
-} */
+.box-1, box-2 {
+  position: relative;
+}
 
+.hidden {
+  display: none 
+}
