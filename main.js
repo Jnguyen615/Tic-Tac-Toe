@@ -14,7 +14,7 @@ console.log(message)
 
 var player1;
 var player2;
-var playersTurn = player1
+var playersTurn = player1;
 var gameOver = false; 
 
 // boxes.addEventListener('click', function(){});
@@ -23,19 +23,21 @@ window.addEventListener('load', function() {
   player2 = createPlayer('player2', '🍄', 0);
   console.log('player1:', player1)
   console.log('player2', player2)
-  updatePlayerTurnText()
-})
+  checkPlayerTurn ()
+});
 
 for (var i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener('click', function(event) {
-    checkPlayerTurn()
-  })
+  boxes[i].addEventListener('click', updatePlayerTurnText)
+      }
+function updatePlayerTurnText(event) {
+  console.log(event)
 }
-// var currentPlayer = createPlayer(player, token, wins {
+
+// var currentPlayer = createPlayer(player, token, wins) {
 //   player: player,
 //   token: token,
 //   wins: wins 
-// })
+// }
 
 var winCombos = [
   [1, 2, 3],
@@ -57,14 +59,11 @@ function createPlayer(name, token, wins) {
   }
 }
 
-
-function updatePlayerTurnText() {
-  if (playersTurn === player2) {
-      message.innerText = `It\'s player ${player2.token}\'s turn!`
-  } else {
-      message.innerText = `It\'s player ${player1.token}\'s turn!`
-  }
+function updatePlayerTurnText(event) {
+  console.log(event)
+  message.innerText = `It\'s player ${player1.token}\'s turn!`
 }
-  
-  
 
+function checkPlayerTurn() {
+
+}
