@@ -1,26 +1,15 @@
 //Query Selectors
 var boxes = document.querySelectorAll('.boxes');
-console.log('boxes:', boxes)
 var message = document.getElementById('whose-turn');
-console.log(message)
 var board = document.querySelector('.grid-container')
 var player1Wins = document.getElementById('#player-one-wins');
 var player2Wins = document.getElementById('#player-two-wins');
-
-//on click check player turn - always player1 first
-//render innterhtml with the correct players token
-//call check wins function 
-//logic checking win combo's 
-//if it matches one of the array 
-// innertext who won
-//update win on data model/show on dom 
-
 var player1 = createPlayer('player1', '🌺', 0);
 var player2 = createPlayer('player2', '🍄', 0);
 var playerStart;
 var gameBoard = ['', '', '', '', '', '', '', '', '']
 var currentPlayer = player1
-var turn = true;
+// var turn = true;
 var gameOver = false; 
 var winCombos = [
   [0, 1, 2],
@@ -69,10 +58,11 @@ function showBoard() {
 function placeToken(event) {
   var clickedBox = parseInt(event.target.closest('section').id);
   gameBoard[clickedBox] = currentPlayer.token
-  console.log('CP', currentPlayer.token)
+  message.innerText = "Invalid move. Please select an empty box!"
   showBoard()
   switchPlayer()
   updatePlayerTurnText()
+  checkTokenBox(event)
 } 
 
 function updatePlayerTurnText(event) {
@@ -80,16 +70,20 @@ function updatePlayerTurnText(event) {
     message.innerText = `It\'s player ${player1.token}\'s turn!`
   } else {
     message.innerText =  `It\'s player ${player2.token}\'s turn!`
-    console.log(currentPlayer)
   }
 }
 
 function switchPlayer() {
-  console.log(currentPlayer)
   currentPlayer = (currentPlayer === player1) ? player2 : player1
-  console.log('CPafter:', currentPlayer)
 }
 
+function checkTokenBox(event) {
+  var clickedBox = parseInt(event.target.closest('section').id) 
+  if (gameBoard[clickedBox] == currentPlayer.token) {
+    console.log('cp:', currentPlayer)
+   message.innerText = 'Invalid move. Please select an empty box! '
+ }
+}
 
   function checkWins() {
 
