@@ -13,7 +13,7 @@ var gameBoard = ['', '', '', '', '', '', '', '', '']
 var currentPlayer = player1
 var gameOver = false; 
 var winCombos = [
-  [0, 1, 2],
+  [0, 1, 2], 
   [3, 4, 5],
   [6, 7, 8],
   [0, 3, 6],
@@ -21,7 +21,7 @@ var winCombos = [
   [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6]
-];
+]; 
 
 //Event Listeners
 window.addEventListener('load', function(event) {
@@ -29,11 +29,13 @@ window.addEventListener('load', function(event) {
 });
 
 
-  board.addEventListener('click', function(event){
-    placeToken(event)
-    //checkWin
-    //checkDraw 
-  })
+board.addEventListener('click', function(event){
+  placeToken(event)
+  updatePlayerTurnText()
+  checkWin(event)
+  switchPlayer()
+  //checkDraw 
+})
 
 //Funcitons 
 function createPlayer(name, token) {
@@ -42,16 +44,15 @@ function createPlayer(name, token) {
     token: token,
     wins: 0,
     turn: true || false, 
-    moves: []
+    moves: ['', '', '', '', '', '', '', '', '']
   }
 }
 
 function showBoard() {
   board.innerHTML = ''
-    for (var i = 0; i < gameBoard.length; i++) {
-      board.innerHTML += `<section class="boxes" id="${i}"> 
-      <p> ${gameBoard[i]} </p> </section>`
-      console.log(gameBoard)
+  for (var i = 0; i < gameBoard.length; i++) {
+    board.innerHTML += `<section class="boxes" id="${i}"> 
+    <p> ${gameBoard[i]} </p> </section>`
   }
 }  
 
@@ -59,19 +60,18 @@ function placeToken(event) {
   var clickedBox = parseInt(event.target.closest('section').id);
   if (gameBoard[clickedBox] === '') {
     gameBoard[clickedBox] = currentPlayer.token 
+    currentPlayer.moves[clickedBox] = currentPlayer.token
+    console.log('CP:', currentPlayer)
   }
   showBoard()
-  switchPlayer()
-  updatePlayerTurnText()
-  checkTokenBox(event)
+ 
 } 
 
 function updatePlayerTurnText(event) {
   if (currentPlayer === player1) {
-    message.innerText = `It\'s player ${player1.token}\'s turn!`
+    message.innerText = `It's player ${player1.token}'s turn!`
   } else {
-    message.innerText =  `It\'s player ${player2.token}\'s turn!`
-  console.log('CP:', currentPlayer)
+    message.innerText =  `It's player ${player2.token}'s turn!`
   }
 }
 
@@ -79,27 +79,31 @@ function switchPlayer() {
   currentPlayer = (currentPlayer === player1) ? player2 : player1
 }
 
-// function checkTokenBox(event) {
-//   var clickedBox = parseInt(event.target.closest('section').id) 
-//   for (var i = 0; i < gameBoard.length; i++) {
-//    if (gameBoard[clickkedBox])
-//     } 
-//   }
-// }
-
-
-function checkWins() {
-
-}
-
-function checkDraw() {
-
+function checkWin(event) {
+  var newIndexArray = []
+  for (var i = 0; i <= currentPlayer.moves.length; i++){
+    console.log('newindex:', newIndexArray)
+    if (currentPlayer.moves[i] !== '') {
+      newIndexArray.push(i)
+    }
   }
+  for (var i = 0; i < winCombos.length; i++) {
+    if (winCombos[i].every(v => newIndexArray.includes(v))) {
+      console.log('winner', winCombos[i].every(v => newIndexArray.includes(v)))
+      message.innerText = `${currentPlayer.token} wins the game!`
+    } 
+  }
+}
+  
 
-function updateWins() {
+  function checkDraw() {
     
   }
   
-function gameReset() {
+  function updateWins() {
+    
+  }
+  
+  function gameReset() {
     //timeout
   }
