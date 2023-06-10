@@ -9,7 +9,6 @@ var player2 = createPlayer('player2', '🍄', 0);
 var playerStart;
 var gameBoard = ['', '', '', '', '', '', '', '', '']
 var currentPlayer = player1
-// var turn = true;
 var gameOver = false; 
 var winCombos = [
   [0, 1, 2],
@@ -33,7 +32,6 @@ window.addEventListener('load', function(event) {
     //checkWin
     //checkDraw 
   })
-
 
 //Funcitons 
 function createPlayer(name, token) {
@@ -79,10 +77,11 @@ function switchPlayer() {
 
 function checkTokenBox(event) {
   var clickedBox = parseInt(event.target.closest('section').id) 
-  if (gameBoard[clickedBox] == currentPlayer.token) {
+    if (gameBoard[clickedBox] === player1.token || player2.token) {
     console.log('cp:', currentPlayer)
    message.innerText = 'Invalid move. Please select an empty box! '
- }
+    }
+  
 }
 
   function checkWins() {
