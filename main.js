@@ -95,5 +95,12 @@ function checkWin(event) {
   }
 }
 
+function checkDraw() {
+  if (!gameBoard.includes('')) {
+    message.innerText = "It's a draw!"
+  }
+}
+
+
 
 
