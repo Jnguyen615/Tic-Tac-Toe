@@ -4,9 +4,11 @@ var message = document.getElementById('whose-turn');
 var board = document.querySelector('.grid-container')
 var player1Wins = document.getElementById('#player-one-wins');
 var player2Wins = document.getElementById('#player-two-wins');
+
+//Global Variables
+var playerStart;
 var player1 = createPlayer('player1', '🌺', 0);
 var player2 = createPlayer('player2', '🍄', 0);
-var playerStart;
 var gameBoard = ['', '', '', '', '', '', '', '', '']
 var currentPlayer = player1
 var gameOver = false; 
@@ -55,8 +57,9 @@ function showBoard() {
 
 function placeToken(event) {
   var clickedBox = parseInt(event.target.closest('section').id);
-  gameBoard[clickedBox] = currentPlayer.token
-  message.innerText = "Invalid move. Please select an empty box!"
+  if (gameBoard[clickedBox] === '') {
+    gameBoard[clickedBox] = currentPlayer.token 
+  }
   showBoard()
   switchPlayer()
   updatePlayerTurnText()
@@ -68,6 +71,7 @@ function updatePlayerTurnText(event) {
     message.innerText = `It\'s player ${player1.token}\'s turn!`
   } else {
     message.innerText =  `It\'s player ${player2.token}\'s turn!`
+  console.log('CP:', currentPlayer)
   }
 }
 
@@ -75,34 +79,27 @@ function switchPlayer() {
   currentPlayer = (currentPlayer === player1) ? player2 : player1
 }
 
-function checkTokenBox(event) {
-  var clickedBox = parseInt(event.target.closest('section').id) 
-    if (gameBoard[clickedBox] === player1.token || player2.token) {
-    console.log('cp:', currentPlayer)
-   message.innerText = 'Invalid move. Please select an empty box! '
-    }
-  
+// function checkTokenBox(event) {
+//   var clickedBox = parseInt(event.target.closest('section').id) 
+//   for (var i = 0; i < gameBoard.length; i++) {
+//    if (gameBoard[clickkedBox])
+//     } 
+//   }
+// }
+
+
+function checkWins() {
+
 }
 
-  function checkWins() {
+function checkDraw() {
 
   }
 
-  function checkDraw() {
-
-  }
-
-  function updateWins() {
-
+function updateWins() {
+    
   }
   
-  function gameReset() {
+function gameReset() {
     //timeout
   }
-
-
-
-
-  
-
-
