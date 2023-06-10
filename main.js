@@ -33,6 +33,7 @@ board.addEventListener('click', function(event){
   placeToken(event)
   updatePlayerTurnText()
   checkWin(event)
+  checkDraw()
   switchPlayer()
   //checkDraw 
 })
@@ -64,8 +65,7 @@ function placeToken(event) {
     console.log('CP:', currentPlayer)
   }
   showBoard()
- 
-} 
+ } 
 
 function updatePlayerTurnText(event) {
   if (currentPlayer === player1) {
@@ -94,16 +94,6 @@ function checkWin(event) {
     } 
   }
 }
-  
 
-  function checkDraw() {
-    
-  }
-  
-  function updateWins() {
-    
-  }
-  
-  function gameReset() {
-    //timeout
-  }
+
+
