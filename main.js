@@ -1,4 +1,4 @@
-//Query Selectors
+// ⭐ Query Selectors ⭐
 var boxes = document.querySelectorAll('.boxes');
 var message = document.getElementById('whose-turn');
 var board = document.querySelector('.grid-container')
@@ -6,12 +6,13 @@ var player1Score = document.getElementById('player-one-wins');
 var player2Score = document.getElementById('player-two-wins');
 
 
-//Global Variables
+// ⭐ Global Variables ⭐
 var playerStart;
 var player1 = createPlayer('player1', '🌺', 0);
 var player2 = createPlayer('player2', '🍄', 0);
 var gameBoard = ['', '', '', '', '', '', '', '', ''];
 var currentPlayer = player1 || player2;
+var startingPlayer = currentPlayer 
 var gameOver = false; 
 var allowClick = true;
 var winCombos = [
@@ -25,15 +26,10 @@ var winCombos = [
   [2, 4, 6]
 ]; 
 
-//Event Listeners
+// ⭐ Event Listeners ⭐
 window.addEventListener('load', function(event) {
   showBoard(event);
 });
-
-window.addEventListener('load', function() {
-  localStorage.setItem("player1Wins", JSON.stringify(player1.wins));
-  localStorage.setItem("player2Wins", JSON.stringify(player2.wins));
-})
 
 board.addEventListener('click', function(event){
   if (allowClick === false) {
@@ -49,9 +45,7 @@ board.addEventListener('click', function(event){
   updatePlayerTurnText();
 })
   
-
-
-//Funcitons 
+// ⭐ Functions ⭐
 function createPlayer(name, token) {
   return {
     name: name,
@@ -75,9 +69,11 @@ function placeToken(event) {
   if (gameBoard[clickedBox] === '') {
     gameBoard[clickedBox] = currentPlayer.token;
     currentPlayer.moves[clickedBox] = currentPlayer.token;
-  }
-  showBoard()
- } 
+    showBoard();
+  } else {
+    return currentPlayer;
+ }
+}
 
 function updatePlayerTurnText(event) {
   if (currentPlayer === player1) {
@@ -105,7 +101,7 @@ function checkWin(event) {
     }
   }
   for (var i = 0; i < winCombos.length; i++) {
-    if (winCombos[i].every(v => newIndexArray.includes(v))) {
+    if (winCombos[i].every(value => newIndexArray.includes(value))) {
       message.innerText = `${currentPlayer.token} wins the game!`;
       currentPlayer.wins++;
       updatePlayerWins();
@@ -127,7 +123,8 @@ function resetBoard() {
   gameBoard = ['', '', '', '', '', '', '', '', ''];
   player1.moves = ['', '', '', '', '', '', '', '', ''];
   player2.moves = ['', '', '', '', '', '', '', '', ''];
-  currentPlayer = currentPlayer === player1 ? player2 : player1;
+  currentPlayer = startingPlayer === player1 ? player2 : player1;
+  startingPlayer = currentPlayer
   gameOver = true;
   allowClick = true;
   updatePlayerTurnText();
