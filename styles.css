@@ -1,6 +1,6 @@
 
 body {
-  background-image: url(assets/jungle-forest.avif);
+  background-image: url(assets/jungle.avif);
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
@@ -22,26 +22,25 @@ body {
   opacity: .4;
   height:59em;
   width: 15em;
-  margin-right: 5em;
+  margin-right: 1em;
   align-items: center;
 }
 
 article {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
   width: 20%
 }
 
 main {
   display: flex;
   justify-content: space-evenly;
-  /* border: 1px solid black; */
   flex-direction: row;
   height: 57em;
   width: 104em;
 }
- body {
+ 
+body {
   height: 100%;
 } 
 
@@ -53,12 +52,12 @@ h1, h4{
 
 h2 {
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 h3 {
   text-align: center;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 p {
@@ -74,8 +73,8 @@ span {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  margin-top: 40%;
-  margin-left: -5%;
+  margin-top: 10%;
+  margin-left: -15%;
   gap: 50px;
 }
 
@@ -84,16 +83,11 @@ span {
   width: 113px;
   height: 123px;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   border-radius: 10%;
   box-shadow: 5px 5px;
   font-size: 65px
 }
-
-/* .box-1, box-2 {
-  position: relative;
-} */
 
 .hidden {
   display: none 
