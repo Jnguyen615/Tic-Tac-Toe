@@ -15,10 +15,11 @@ body {
   height: 59em;
   width: 15em;
   align-items: center;
+  
 }
 
 .player2 {
-  background-color:#63b568;
+  background-color:(99,181,104,.7);
   opacity: .7;
   height:59em;
   width: 15em;
