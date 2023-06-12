@@ -35,7 +35,10 @@ board.addEventListener('click', function(event){
   if (allowClick === false) {
     return 
   }
-  placeToken(event);
+ if (placeToken(event) === false){
+  console.log('test')
+    return
+ };
   if (checkWin(event)) {
     return
   } else if (checkDraw()) {
@@ -71,7 +74,7 @@ function placeToken(event) {
     currentPlayer.moves[clickedBox] = currentPlayer.token;
     showBoard();
   } else {
-    return currentPlayer;
+    return false;
  }
 }
 
