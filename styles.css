@@ -19,8 +19,8 @@ body {
 }
 
 .player2 {
-  background-color:(99,181,104,.7);
-  opacity: .7;
+  background-color:#63b568;
+  opacity: .6;
   height:59em;
   width: 15em;
   margin-right: -1em;
