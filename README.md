@@ -6,10 +6,10 @@
 
 ### *Installation Instructions*
 
-> To get this app running users will need to go to `https://github.com/Jnguyen615/Tic-Tac-Toe` to see the repository for the project. Then by hitting the green code button you can use the SSH key to clone the repository down to your machine. To do this you the user would need to open their terminal and type `git clone` followed by the copied SSH key. Then from terminal the user can open the project by typing `open index.html` From there the app will open in the users preferred broswer. 
+> To get this app running users will need to go to (https://github.com/Jnguyen615/Tic-Tac-Toe) to see the repository for the project. Then by hitting the green code button you can use the SSH key to clone the repository down to your machine. To do this you the user would need to open their terminal and type `git clone` followed by the copied SSH key. Then from terminal the user can open the project by typing `open index.html` From there the app will open in the users preferred broswer. 
 
 ### Preview of the App 
->![Tic-tac-toe-demo](assets/Jun-13-2023%2014-22-19.gif)
+>![Tic-tac-toe-demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWU4OTZiYjQ0YTM5Njc1ODU0MGEwYjJkNjM2M2ExYWNjY2UyMWRlOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/k7a7I4ami2NNvgUsEY/giphy.gif)
 
 ### *Context* 
 
