@@ -1,18 +1,18 @@
-// ⭐ Query Selectors ⭐
+// Query Selectors 
 var boxes = document.querySelectorAll('.boxes');
 var message = document.getElementById('whose-turn');
-var board = document.querySelector('.grid-container')
+var board = document.querySelector('.grid-container');
 var player1Score = document.getElementById('player-one-wins');
 var player2Score = document.getElementById('player-two-wins');
 
 
-// ⭐ Global Variables ⭐
+// Global Variables 
 var playerStart;
 var player1 = createPlayer('player1', '🌺', 0);
 var player2 = createPlayer('player2', '🍄', 0);
 var gameBoard = ['', '', '', '', '', '', '', '', ''];
 var currentPlayer = player1 || player2;
-var startingPlayer = currentPlayer 
+var startingPlayer = currentPlayer; 
 var gameOver = false; 
 var allowClick = true;
 var winCombos = [
@@ -26,7 +26,7 @@ var winCombos = [
   [2, 4, 6]
 ]; 
 
-// ⭐ Event Listeners ⭐
+// Event Listeners 
 window.addEventListener('load', function(event) {
   showBoard(event);
 });
@@ -48,7 +48,7 @@ board.addEventListener('click', function(event){
   updatePlayerTurnText();
 })
   
-// ⭐ Functions ⭐
+// Functions
 function createPlayer(name, token) {
   return {
     name: name,
@@ -117,6 +117,7 @@ function checkWin(event) {
 function checkDraw() {
   if (!gameBoard.includes('')) {
     message.innerText = "It's a draw!";
+    setTimeout(resetBoard, 4000);
     return true;
   }
 }
@@ -127,7 +128,7 @@ function resetBoard() {
   player1.moves = ['', '', '', '', '', '', '', '', ''];
   player2.moves = ['', '', '', '', '', '', '', '', ''];
   currentPlayer = startingPlayer === player1 ? player2 : player1;
-  startingPlayer = currentPlayer
+  startingPlayer = currentPlayer;
   gameOver = true;
   allowClick = true;
   updatePlayerTurnText();
