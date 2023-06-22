@@ -61,7 +61,6 @@ function createPlayer(name, token) {
 
 function showBoard() {
   board.innerHTML = '';
-  // for (var i = 0; i < gameBoard.length; i++) {
   gameBoard.forEach ((box, index) => {
     board.innerHTML += `<section class="boxes" id="${index}"> 
     <p> ${box} </p> </section>`
@@ -124,7 +123,6 @@ function checkDraw() {
 }
 
 function resetBoard() {
-  for (var i = 0; i < gameBoard.length; i++) {
   gameBoard = ['', '', '', '', '', '', '', '', ''];
   player1.moves = ['', '', '', '', '', '', '', '', ''];
   player2.moves = ['', '', '', '', '', '', '', '', ''];
@@ -134,5 +132,4 @@ function resetBoard() {
   allowClick = true;
   updatePlayerTurnText();
   showBoard();
-  }
 }

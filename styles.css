@@ -5,7 +5,7 @@ body {
   background-size: cover;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family: 'Rubik Marker Hatch', sans-serif ;
+  font-family: 'Rubik Marker Hatch', sans-serif;
 }
 
 .player1 { 
@@ -20,7 +20,7 @@ body {
 
 .player2 {
   background-color:#63b568;
-  opacity: .6;
+  opacity: .7;
   height:59em;
   width: 15em;
   margin-right: -1em;
@@ -57,7 +57,7 @@ h2 {
 
 h3 {
   text-align: center;
-  font-size: 32px;
+  font-size: 25px;
   margin-top: 1%
 }
 
@@ -75,6 +75,7 @@ span {
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
   margin-left: -15%;
+  margin-top: 20%;
   gap: 50px;
 }
 
