@@ -35,7 +35,7 @@ board.addEventListener('click', function(event){
   if (allowClick === false) {
     return 
   }
- if (placeToken(event) === false){
+  if (placeToken(event) === false){
   console.log('test')
     return
  };
@@ -61,10 +61,11 @@ function createPlayer(name, token) {
 
 function showBoard() {
   board.innerHTML = '';
-  for (var i = 0; i < gameBoard.length; i++) {
-    board.innerHTML += `<section class="boxes" id="${i}"> 
-    <p> ${gameBoard[i]} </p> </section>`
-  }
+  // for (var i = 0; i < gameBoard.length; i++) {
+  gameBoard.forEach ((box, index) => {
+    board.innerHTML += `<section class="boxes" id="${index}"> 
+    <p> ${box} </p> </section>`
+  })
 }  
 
 function placeToken(event) {
@@ -97,12 +98,12 @@ function switchPlayer() {
 }
 
 function checkWin(event) {
-  var newIndexArray = [];
-  for (var i = 0; i <= currentPlayer.moves.length; i++){
-    if (currentPlayer.moves[i] !== '') {
-      newIndexArray.push(i);
+  const newIndexArray = currentPlayer.moves.map((move, index) => {
+    if (move !== '') {
+      return index;
     }
-  }
+  }).filter(index => index !== undefined);
+  
   for (var i = 0; i < winCombos.length; i++) {
     if (winCombos[i].every(value => newIndexArray.includes(value))) {
       message.innerText = `${currentPlayer.token} wins the game!`;
